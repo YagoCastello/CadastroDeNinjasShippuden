@@ -1,9 +1,17 @@
 package dev.java10x.CadastroDeNinjasShippuden.Ninjas;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping
+@RequestMapping("/ninjas")
 public class NinjaController {
+
+    private NinjaService ninjaService;
+
+    public NinjaController(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
+    }
 
     @GetMapping("/boasvindas")
     public String Bemvindos(){
@@ -19,9 +27,10 @@ public class NinjaController {
     }
 
     //Procurar Ninja por ID(CREATE)
-    @GetMapping("/todos")
-    public String mostrarTodosOsNinjas(){
-        return "Mostrar Ninja Criado";
+    @GetMapping("/listar")
+    public List<NinjaModel> listarNinjas(){
+
+        return ninjaService.listarNinjas();
     }
 
     //Mostrar todos os ninjas (READ)
@@ -34,7 +43,7 @@ public class NinjaController {
     // Alterar dados dos ninjas (UPDATE)
     @PutMapping("/alterarID")
     public String alterarNinjaPorId(){
-        return "Alterar Ninjapor ID";
+        return "Alterar Ninja por ID";
     }
 
 
