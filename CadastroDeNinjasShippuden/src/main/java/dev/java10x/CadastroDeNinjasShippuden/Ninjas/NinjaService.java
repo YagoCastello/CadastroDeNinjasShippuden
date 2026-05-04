@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 @Service
 public class NinjaService {
 
-    private NinjaMapper ninjaMapper;
-    private NinjaRepository ninjaRepository;
+    private final NinjaMapper ninjaMapper;
+    private final NinjaRepository ninjaRepository;
 
     public NinjaService(NinjaMapper ninjaMapper, NinjaRepository ninjaRepository) {
         this.ninjaMapper = ninjaMapper;
