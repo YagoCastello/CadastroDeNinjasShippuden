@@ -1,0 +1,107 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    padding: 30px;
+}
+
+/* Container da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Cabeçalho */
+thead {
+    background-color: #334155;
+}
+
+thead th {
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+}
+
+/* Linhas */
+tbody tr {
+    border-bottom: 1px solid #334155;
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #273549;
+}
+
+/* Células */
+td {
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* Imagem */
+td img {
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #334155;
+}
+
+/* Links (ações) */
+td a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+/* Botões específicos */
+td a:nth-child(1) {
+    background-color: #3b82f6;
+    color: white;
+}
+
+td a:nth-child(1):hover {
+    background-color: #2563eb;
+}
+
+td a:nth-child(2) {
+    background-color: #f59e0b;
+    color: white;
+}
+
+td a:nth-child(2):hover {
+    background-color: #d97706;
+}
+
+td a:nth-child(3) {
+    background-color: #ef4444;
+    color: white;
+}
+
+td a:nth-child(3):hover {
+    background-color: #dc2626;
+}
+
+/* Texto de fallback */
+span {
+    font-size: 13px;
+    color: #cbd5f5;
+}
