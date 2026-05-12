@@ -34,10 +34,12 @@
             <span th:if="${ninja.missoes}"><span th:text="${ninja.missoes.nome}"></span>, Dificuldade: <span th:text="${ninja.missoes.dificuldade}"></span></span>
             <span th:if="${ninja.missoes == null}">Sem Missões cadastradas para o ninja</span>
         </td>
-        <td>
+        <td class="acoes">
 
             <a th:href="@{/ninjas/ui/listar/{id}(id=${ninja.id})}">Ver detalhes</a>
-            <a th:href="@{/ninjas/ui/alterar/{id}(id=${ninja.id})}">Alterar</a>
+            <a th:href="@{/ninjas/ui/alterar/{id}(id=${ninja.id})}">
+                <button class="btn-alterar">Alterar</button>
+            </a>
             <a th:href="@{/ninjas/ui/deletarid/{id}(id=${ninja.id})}">Deletar</a>
         </td>
 

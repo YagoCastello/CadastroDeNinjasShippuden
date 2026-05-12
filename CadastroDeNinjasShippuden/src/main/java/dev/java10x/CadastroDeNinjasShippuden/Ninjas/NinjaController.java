@@ -1,6 +1,7 @@
 package dev.java10x.CadastroDeNinjasShippuden.Ninjas;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -76,4 +77,27 @@ public class NinjaController {
             return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("O ninja com o id "+id+", não foi encontrado. Tente outro id. ");
         }
 
-}}
+}
+
+    @GetMapping("/alterar/{id}")
+    public String abrirPaginaAlteracao(@PathVariable Long id,
+                                       Model model){
+
+        NinjaDTO ninja = ninjaService.listarNinjasPorId(id);
+
+        model.addAttribute("ninja", ninja);
+
+        return "alterarNinja";
+    }
+
+
+    @PostMapping("/salvarAlteracao")
+    public String salvarAlteracao(@ModelAttribute NinjaDTO ninjaDTO){
+
+        ninjaService.criarNinja(ninjaDTO);
+
+        return "redirect:/ninjas/ui/listar";
+    }
+
+
+}

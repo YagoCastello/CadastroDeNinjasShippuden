@@ -60,5 +60,24 @@ public class NinjaControllerUi {
         return "redirect:/ninjas/ui/listar";
     }
 
+    @PostMapping("/salvarAlteracao")
+    public String salvarAlteracao(@ModelAttribute NinjaDTO ninjaDTO){
+
+        ninjaService.criarNinja(ninjaDTO);
+
+        return "redirect:/ninjas/ui/listar";
+    }
+
+    @GetMapping("/alterar/{id}")
+    public String abrirPaginaAlteracao(@PathVariable Long id,
+                                       Model model){
+
+        NinjaDTO ninjaDTO = ninjaService.listarNinjasPorId(id);
+
+        model.addAttribute("ninja", ninjaDTO);
+
+        return "alterarNinja";
+    }
+
 
 }

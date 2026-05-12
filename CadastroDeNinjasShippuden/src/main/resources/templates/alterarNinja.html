@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Alterar Ninja</title>
+
+    <link rel="stylesheet" th:href="@{/css/alterarNinja.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Alterar Ninja</h1>
+
+    <form th:action="@{/ninjas/ui/salvarAlteracao}"
+          th:object="${ninja}"
+          method="post">
+
+        <input type="hidden" th:field="*{id}">
+
+        <div class="campo">
+            <label>Nome</label>
+            <input type="text" th:field="*{nome}">
+        </div>
+
+        <div class="campo">
+            <label>Idade</label>
+            <input type="number" th:field="*{idade}">
+        </div>
+
+        <div class="campo">
+            <label>Email</label>
+            <input type="email" th:field="*{email}">
+        </div>
+
+        <div class="campo">
+            <label>Imagem</label>
+            <input type="text" th:field="*{imgUrl}">
+        </div>
+
+        <div class="campo">
+            <label>Rank</label>
+            <input type="text" th:field="*{rank}">
+        </div>
+
+        <div class="campo">
+            <label>Missões</label>
+            <input type="number" th:field="*{missoes}">
+        </div>
+
+        <button type="submit" class="btn-salvar">
+            Salvar Alterações
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
