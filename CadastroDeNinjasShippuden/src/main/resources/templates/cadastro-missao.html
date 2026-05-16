@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Missão</title>
+
+    <link rel="stylesheet" th:href="@{/css/missoes.css}">
+</head>
+<body>
+
+<div class="form-container">
+
+    <h1>Cadastro de Missão</h1>
+
+    <form th:action="@{/missoes/salvar}"
+          th:object="${missao}"
+          method="post">
+
+        <div class="input-group">
+            <label>Nome</label>
+
+            <input type="text"
+                   th:field="*{nome}"
+                   required>
+        </div>
+
+        <div class="input-group">
+            <label>Dificuldade</label>
+
+            <input type="text"
+                   th:field="*{dificuldade}"
+                   required>
+        </div>
+
+        <div class="input-group">
+            <label>Recompensa</label>
+
+            <input type="number"
+                   th:field="*{recompensa}"
+                   required>
+        </div>
+
+        <button type="submit" class="btn-salvar">
+            Salvar Missão
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

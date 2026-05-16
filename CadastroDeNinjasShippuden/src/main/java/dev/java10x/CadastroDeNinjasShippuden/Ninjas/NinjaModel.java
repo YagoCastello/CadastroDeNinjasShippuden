@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@ToString(exclude = "missoes")
 public class NinjaModel {
 
     @Id
@@ -32,6 +34,10 @@ public class NinjaModel {
 
     @Column(name = "idade")
     private int idade;
+
+    @Column(name = "rank")
+    private String rank;
+
     @ManyToOne
     @JoinColumn(name = "missoes_id") // Foreing key ou chave estrangeira
     private MissaoModel missoes;
