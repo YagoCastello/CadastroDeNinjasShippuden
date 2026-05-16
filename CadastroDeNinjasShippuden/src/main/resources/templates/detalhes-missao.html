@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes da Missão</title>
+
+    <link rel="stylesheet" th:href="@{/css/missoes.css}">
+</head>
+<body>
+
+<div class="detalhes-container">
+
+    <div class="card-detalhes">
+
+        <div class="titulo-area">
+            <h1 th:text="${missao.nome}"></h1>
+
+            <span class="badge"
+                  th:text="${missao.dificuldade}">
+            </span>
+        </div>
+
+        <div class="info-area">
+
+            <div class="info-box">
+                <h3>ID</h3>
+
+                <p th:text="${missao.id}"></p>
+            </div>
+
+            <div class="info-box">
+                <h3>Recompensa</h3>
+
+                <p>
+                    R$
+                    <span th:text="${missao.recompensa}"></span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="descricao-area">
+
+            <h2>Descrição da Missão</h2>
+
+            <p th:text="${missao.descricao}">
+            </p>
+
+        </div>
+
+        <div class="botoes">
+
+            <a th:href="@{/missoes}"
+               class="btn-voltar">
+                Voltar
+            </a>
+
+            <a th:href="@{/missoes/alterar/{id}(id=${missao.id})}"
+               class="btn-editar">
+                Editar
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

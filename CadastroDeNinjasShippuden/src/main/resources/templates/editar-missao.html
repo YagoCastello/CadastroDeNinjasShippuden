@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Missão</title>
+
+    <link rel="stylesheet" th:href="@{/css/missoes.css}">
+</head>
+<body>
+
+<div class="form-container">
+
+    <h1>Editar Missão</h1>
+
+    <form th:action="@{/missoes/atualizar/{id}(id=${missao.id})}"
+          th:object="${missao}"
+          method="post">
+
+        <input type="hidden" th:field="*{id}">
+
+        <div class="input-group">
+            <label>Nome</label>
+
+            <input type="text"
+                   th:field="*{nome}">
+        </div>
+
+        <div class="input-group">
+            <label>Dificuldade</label>
+
+            <input type="text"
+                   th:field="*{dificuldade}">
+        </div>
+
+        <div class="input-group">
+            <label>Recompensa</label>
+
+            <input type="number"
+                   th:field="*{recompensa}">
+        </div>
+
+        <button type="submit" class="btn-salvar">
+            Atualizar Missão
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

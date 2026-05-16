@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Missões</title>
+
+    <link rel="stylesheet" th:href="@{/css/missoes.css}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="topo">
+        <h1>Missões</h1>
+
+        <a th:href="@{/missoes/cadastrar}" class="btn-add">
+            + Nova Missão
+        </a>
+    </div>
+
+    <table>
+
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Dificuldade</th>
+            <th>Recompensa</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr th:each="missao : ${missoes}">
+
+            <td th:text="${missao.id}"></td>
+
+            <td th:text="${missao.nome}"></td>
+
+            <td th:text="${missao.dificuldade}"></td>
+
+            <td th:text="${missao.recompensa}"></td>
+
+            <td class="acoes">
+
+                <a th:href="@{/missoes/alterar/{id}(id=${missao.id})}"
+                   class="btn-editar">
+                    Editar
+                </a>
+
+                <a th:href="@{/missoes/{id}(id=${missao.id})}"
+                   class="btn-detalhes">
+                    Detalhes
+                </a>
+
+                <a th:href="@{/missoes/deletar/{id}(id=${missao.id})}"
+                   class="btn-deletar">
+                    Deletar
+                </a>
+
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>
