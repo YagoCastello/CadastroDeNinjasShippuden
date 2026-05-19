@@ -38,7 +38,7 @@ public class MissoesControllerUi {
     }
 
     // Deletar ninja(DELETE)
-    @GetMapping("/deletarid/{id}")
+    @GetMapping("/deletar/{id}")
     public String deletarMissaoPorId(@PathVariable Long id) {
         missaoService.deletarMissaoPorId(id);
         return "redirect:/missoes/ui/listar";
