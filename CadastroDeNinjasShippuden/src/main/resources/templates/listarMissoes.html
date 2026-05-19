@@ -25,8 +25,6 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Dificuldade</th>
-            <th>Recompensa</th>
-            <th>Ações</th>
         </tr>
         </thead>
 
@@ -40,21 +38,20 @@
 
             <td th:text="${missao.dificuldade}"></td>
 
-            <td th:text="${missao.recompensa}"></td>
 
             <td class="acoes">
 
-                <a th:href="@{/missoes/alterar/{id}(id=${missao.id})}"
+                <a th:href="@{/missoes/ui/alterar/{id}(id=${missao.id})}"
                    class="btn-editar">
                     Editar
                 </a>
 
-                <a th:href="@{/missoes/{id}(id=${missao.id})}"
+                <a th:href="@{/missoes/ui/listar/{id}(id=${missao.id})}"
                    class="btn-detalhes">
                     Detalhes
                 </a>
 
-                <a th:href="@{/missoes/deletar/{id}(id=${missao.id})}"
+                <a th:href="@{/missoes/ui/deletar/{id}(id=${missao.id})}"
                    class="btn-deletar">
                     Deletar
                 </a>

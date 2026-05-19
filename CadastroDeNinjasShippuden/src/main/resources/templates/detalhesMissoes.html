@@ -28,34 +28,19 @@
                 <p th:text="${missao.id}"></p>
             </div>
 
-            <div class="info-box">
-                <h3>Recompensa</h3>
 
-                <p>
-                    R$
-                    <span th:text="${missao.recompensa}"></span>
-                </p>
-            </div>
 
         </div>
 
-        <div class="descricao-area">
-
-            <h2>Descrição da Missão</h2>
-
-            <p th:text="${missao.descricao}">
-            </p>
-
-        </div>
 
         <div class="botoes">
 
-            <a th:href="@{/missoes}"
+            <a href="/missoes/ui/listar"
                class="btn-voltar">
                 Voltar
             </a>
 
-            <a th:href="@{/missoes/alterar/{id}(id=${missao.id})}"
+            <a th:href="@{/missoes/ui/alterar/{id}(id=${missao.id})}"
                class="btn-editar">
                 Editar
             </a>
