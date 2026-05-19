@@ -11,8 +11,10 @@
 <div class="form-container">
 
     <h1>Cadastro de Missão</h1>
+    <div th:if="${mensagem}" class="mensagem" th:text="${mensagem}"></div>
 
-    <form th:action="@{/missoes/salvarAlteracao}"
+    <form th:action="@{/missoes/ui/salvar}"
+
           th:object="${missao}"
           method="post">
 

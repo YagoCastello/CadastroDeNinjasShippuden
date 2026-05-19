@@ -18,7 +18,7 @@ public class MissoesController {
 
 
     // POST-- Mandar uma requisição para CRIAR as missoes
-    @PostMapping("/criar")
+    @PostMapping("/adicionar")
     public ResponseEntity<String> criarMissao(@RequestBody MissaoDTO missao) {
         MissaoDTO novaMissao = missaoService.criarMissao(missao);
         return ResponseEntity.status(HttpStatus.CREATED)
