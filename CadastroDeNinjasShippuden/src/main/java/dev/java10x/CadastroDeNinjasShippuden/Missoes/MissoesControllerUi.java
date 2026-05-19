@@ -1,6 +1,5 @@
 package dev.java10x.CadastroDeNinjasShippuden.Missoes;
 
-import dev.java10x.CadastroDeNinjasShippuden.Ninjas.NinjaDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,10 +18,10 @@ public class MissoesControllerUi {
     }
 
     @GetMapping("/listar")
-    public String listar(Model model){
+    public String listarMissoes(Model model){
         List<MissaoDTO> missoes = missaoService.listarMissoes();
         model.addAttribute("missoes", missoes);
-        return "missoes/listar";
+        return "listarMissoes";
     }
 
     @GetMapping("/listar/{id}")
@@ -31,7 +30,7 @@ public class MissoesControllerUi {
 
         if(missao != null){
             model.addAttribute("missao", missao);
-            return "detalhesmissoes";
+            return "detalhesMissoes";
         }else  {
             model.addAttribute("mensagem", "Nenhum Missao encontrada");
             return "listarMissoes";
@@ -49,7 +48,7 @@ public class MissoesControllerUi {
     @GetMapping("/adicionar")
     public String mostrarFormularioAdicionarMissao(Model model) {
         model.addAttribute("missao", new MissaoDTO());
-        return "adicionarMissao";
+        return "adicionarMissoes";
     }
 
     @PostMapping("/salvar")

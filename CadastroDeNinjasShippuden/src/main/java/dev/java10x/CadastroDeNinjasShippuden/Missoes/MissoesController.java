@@ -1,6 +1,5 @@
 package dev.java10x.CadastroDeNinjasShippuden.Missoes;
-import dev.java10x.CadastroDeNinjasShippuden.Ninjas.NinjaDTO;
-import dev.java10x.CadastroDeNinjasShippuden.Ninjas.NinjaModel;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -68,24 +67,17 @@ public class MissoesController {
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("A missao com o id " + id + ", não foi encontrada. Tente outro id. ");
         }
-
-
-
-
-
-
     }
 
 
     @GetMapping("/alterar/{id}")
-    public String abrirPaginaAlteracao(@PathVariable Long id,
-                                       Model model){
+    public String abrirPaginaAlteracao(@PathVariable Long id, Model model){
 
         MissaoDTO missao = missaoService.listarMissoesPorId(id);
 
         model.addAttribute("missao", missao);
 
-        return "alterarMissao";
+        return "alterarMissoes";
     }
 
 
@@ -94,7 +86,7 @@ public class MissoesController {
 
         missaoService.criarMissao(missaoDTO);
 
-        return "redirect:/missao/ui/listar";
+        return "redirect:/missoes/ui/listar";
     }
 
 }

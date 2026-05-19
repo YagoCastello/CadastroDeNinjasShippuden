@@ -12,7 +12,7 @@
 
     <h1>Editar Missão</h1>
 
-    <form th:action="@{/missoes/atualizar/{id}(id=${missao.id})}"
+    <form th:action="@{/missoes/ui/salvarAlteracao}"
           th:object="${missao}"
           method="post">
 
@@ -32,12 +32,7 @@
                    th:field="*{dificuldade}">
         </div>
 
-        <div class="input-group">
-            <label>Recompensa</label>
 
-            <input type="number"
-                   th:field="*{recompensa}">
-        </div>
 
         <button type="submit" class="btn-salvar">
             Atualizar Missão
